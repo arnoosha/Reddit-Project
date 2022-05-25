@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           toolbarHeight: 100,
-          title: Text('REDDIT' , textAlign: TextAlign.center,),
+          title: SizedBox(height: 60, child: Image.asset('assets/images/1.jpg'),),
           backgroundColor: Colors.deepOrange,
           foregroundColor: Colors.black,
           elevation: 20,
