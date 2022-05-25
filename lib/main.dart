@@ -36,10 +36,23 @@ class MyApp extends StatelessWidget {
           ],),
         ),
         appBar: AppBar(
-          title: Text('reddit'),
-          backgroundColor: Colors.blueGrey,
+          centerTitle: true,
+          toolbarHeight: 100,
+          title: Text('REDDIT' , textAlign: TextAlign.center,),
+          backgroundColor: Colors.deepOrange,
           foregroundColor: Colors.black,
+          elevation: 20,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomRight: Radius.circular(70), bottomLeft: Radius.circular(70))),
+          actions: [
+            Row(children: [Container(
+              height: 40,
+              width: 40,
+              alignment: Alignment.center,
+            )],
+            )
+          ],
         ),
+
       ),
     );
   }
