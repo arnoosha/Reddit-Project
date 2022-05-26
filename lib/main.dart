@@ -7,7 +7,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
-
   @override
   Widget build(BuildContext context) {
     return MediaQuery(data: MediaQueryData(), child: MaterialApp(
@@ -38,8 +37,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           toolbarHeight: 100,
-          title: SizedBox(height: 60, child: Image.asset('assets/images/1.jpg'),),
-          backgroundColor: Colors.deepOrange,
+          title: SizedBox(height: 60, child: Image.asset('assets/images/2.png'),),
+          backgroundColor: Colors.orange,
           foregroundColor: Colors.black,
           elevation: 20,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomRight: Radius.circular(70), bottomLeft: Radius.circular(70))),
