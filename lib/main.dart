@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MediaQuery(data: MediaQueryData(), child: MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: Column(children: [
-            Container(margin: EdgeInsets.only(top: 450),
+            Container(margin: EdgeInsets.only(top: 300),
             child: FlatButton(
               padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 60.0),
               onPressed: () => Scaffold(),
@@ -54,6 +54,7 @@ class MyApp extends StatelessWidget {
         ),
 
       ),
-    );
+    ));
+
   }
 }
