@@ -22,14 +22,14 @@ class MyApp extends StatelessWidget {
             child: FlatButton(
               padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 66.0),
               onPressed: () => Scaffold(),
-              child: Text('Login'),
+              child: Text('Login' , style: TextStyle(fontStyle: FontStyle.italic,fontSize: 18.0)),
               shape: RoundedRectangleBorder(borderRadius : BorderRadius.circular(16.0), side: BorderSide(color: Colors.amber) ),
             ),),
             Container(margin: EdgeInsets.only(top: 20),
               child: FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 60.0),
                 onPressed: () => Scaffold(),
-                child: Text('Sign Up'),
+                child: Text('Sign Up' , style: TextStyle(fontStyle: FontStyle.italic , fontSize: 18.0)),
                 //shape: RoundedRectangleBorder(side: BorderSide(color: Colors.amber)),
                 shape: RoundedRectangleBorder(borderRadius : BorderRadius.circular(16.0), side: BorderSide(color: Colors.amber) ),
               ),),
