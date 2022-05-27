@@ -20,25 +20,27 @@ class MyApp extends StatelessWidget {
           child: Column(children: [
             Container(margin: EdgeInsets.only(top: 300),
             child: FlatButton(
-              padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 60.0),
+              padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 66.0),
               onPressed: () => Scaffold(),
               child: Text('Login'),
-            shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blueAccent)),
+              shape: RoundedRectangleBorder(borderRadius : BorderRadius.circular(16.0), side: BorderSide(color: Colors.amber) ),
             ),),
             Container(margin: EdgeInsets.only(top: 20),
               child: FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 60.0),
                 onPressed: () => Scaffold(),
                 child: Text('Sign Up'),
-                shape: RoundedRectangleBorder(side: BorderSide(color: Colors.blueAccent)),
+                //shape: RoundedRectangleBorder(side: BorderSide(color: Colors.amber)),
+                shape: RoundedRectangleBorder(borderRadius : BorderRadius.circular(16.0), side: BorderSide(color: Colors.amber) ),
               ),),
+
           ],),
         ),
         appBar: AppBar(
           centerTitle: true,
           toolbarHeight: 100,
           title: SizedBox(height: 60, child: Image.asset('assets/images/2.png'),),
-          backgroundColor: Colors.orange,
+          backgroundColor: Colors.deepOrange,
           foregroundColor: Colors.black,
           elevation: 20,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomRight: Radius.circular(70), bottomLeft: Radius.circular(70))),
