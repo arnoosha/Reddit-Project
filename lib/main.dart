@@ -1,27 +1,31 @@
+
 import 'package:flutter/material.dart';
+import 'package:reddit2/Login.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MaterialApp(home: MyApp()));
 
 }
 
 class MyApp extends StatelessWidget {
 
+
   @override
   Widget build(BuildContext context) {
-    return MediaQuery(data: MediaQueryData(), child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
+
+    return  Scaffold(
         body: Center(
           child: Column(children: [
             Container(margin: EdgeInsets.only(top: 300),
             child: FlatButton(
               padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 66.0),
-              onPressed: () => Scaffold(),
+              onPressed: () {
+                Navigator.push(context,
+                MaterialPageRoute(
+                    builder: (context)=> Login()),
+                );
+
+              },
               child: Text('Login' , style: TextStyle(fontStyle: FontStyle.italic,fontSize: 18.0)),
               shape: RoundedRectangleBorder(borderRadius : BorderRadius.circular(16.0), side: BorderSide(color: Colors.amber) ),
             ),),
@@ -54,8 +58,7 @@ class MyApp extends StatelessWidget {
           ],
         ),
 
-      ),
-    ));
 
+    );
   }
 }
