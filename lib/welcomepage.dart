@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reddit2/Login.dart';
-import 'package:reddit2/signUp.dart';
+import 'package:reddit2/pages/Login.dart';
+import 'package:reddit2/pages/signUp.dart';
 
 void main() {
   runApp(MaterialApp(home: welcomePage()));
@@ -47,6 +47,7 @@ class welcomePage extends StatelessWidget{
         ],),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 100,
         title: SizedBox(height: 60, child: Image.asset('assets/images/2.png'),),
