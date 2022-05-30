@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/videos/2.mp4')
+    _controller = VideoPlayerController.asset('assets/videos/4.mp4')
       ..initialize().then((_) {
         _controller.play();
        _controller.setLooping(true);
@@ -80,13 +80,17 @@ class _LoginState extends State<Login> {
                         offset: Offset(2.5, 2.5),
                         blurRadius: 5.0,
                         color: Color.fromARGB(255, 0, 0, 0),
-                        ),], ), ),
+                        ),
+                    ],
+                    ),
+                    ),
                   ),
                 ),
                 Container( margin: EdgeInsets.only(top: 150 ), child: Image.asset('assets/images/4.png' , scale: 6.0,),),
                 Container (
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color.fromARGB(255, 21, 177, 95)),
+                      border: Border.all(color: Color.fromARGB(
+                          255, 82, 37, 116)),
                       borderRadius: BorderRadius.circular(15.0),
                   ),
                   margin: EdgeInsets.only(top : 100.0 , left: 15.0),
@@ -108,7 +112,7 @@ class _LoginState extends State<Login> {
                 Container (
                   decoration: BoxDecoration(
                       border: Border.all(color: Color.fromARGB(
-                          255, 21, 177, 95) ),
+                          255, 82, 37, 116) ),
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                   margin: EdgeInsets.only(top : 20.0 , left: 15.0),
@@ -127,7 +131,7 @@ class _LoginState extends State<Login> {
                       child: Icon(Icons.visibility,color: Colors.limeAccent,),),
                       border :
                         OutlineInputBorder(
-                          borderSide: BorderSide( /*color :Color.fromARGB(255, 219, 116, 4) , */width: 1.0),
+                          borderSide: BorderSide(width: 1.0),
                           borderRadius: BorderRadius.circular(15.0),
                         ),
                       hintText: 'Password'
@@ -140,7 +144,7 @@ class _LoginState extends State<Login> {
                   child: MaterialButton(
 
                     child: CircleAvatar(
-                      backgroundColor: Colors.greenAccent,
+                      backgroundColor: Color.fromARGB(255, 109, 3, 3),
                       child: Icon(Icons.arrow_forward_ios,color:Colors.white),
 
                     ),
@@ -150,6 +154,32 @@ class _LoginState extends State<Login> {
                             builder: (context) => welcomePage()));
 
                     },
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(right: 40 ),
+                  child: Text("Still don't have an account?" , style: TextStyle(fontSize: 12.0),),
+                ),
+
+                Container(margin: EdgeInsets.only(left: 150),
+                  child: FlatButton(
+                    padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 90.0),
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(
+                            builder: (context) => signUp()),
+                      );
+                    },
+                    child: Text("Sign Up",
+                        style: TextStyle(fontSize: 12.0 , color: Color.fromARGB(
+                            255, 0, 0, 0),shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(2.5, 2.5),
+                            blurRadius: 5.0,
+                            color: Color.fromARGB(255, 75, 13, 180),
+                          ),
+                        ],)
+                    ),
                   ),
                 ),
               ],

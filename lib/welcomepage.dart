@@ -33,7 +33,7 @@ class welcomePage extends StatelessWidget{
               onPressed: () {
                 Navigator.push(context,
                   MaterialPageRoute(
-                      builder: (context) => SignUp()),
+                      builder: (context) => signUp()),
                 );
               },
               child: Text('Sign Up', style: TextStyle(
@@ -42,7 +42,8 @@ class welcomePage extends StatelessWidget{
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                   side: BorderSide(color: Colors.amber)),
-            ),),
+            ),
+          ),
 
         ],),
       ),
