@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:reddit2/Login.dart';
+import 'package:reddit2/signUp.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -32,7 +33,13 @@ class MyApp extends StatelessWidget {
             Container(margin: EdgeInsets.only(top: 20),
               child: FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 18.0 , horizontal: 60.0),
-                onPressed: () => Scaffold(),
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context)=> SignUp()),
+                  );
+
+                },
                 child: Text('Sign Up' , style: TextStyle(fontStyle: FontStyle.italic , fontSize: 18.0)),
                 //shape: RoundedRectangleBorder(side: BorderSide(color: Colors.amber)),
                 shape: RoundedRectangleBorder(borderRadius : BorderRadius.circular(16.0), side: BorderSide(color: Colors.amber) ),
