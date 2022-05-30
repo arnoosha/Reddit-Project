@@ -41,28 +41,37 @@ class _LoginState extends State<Login> {
         ),*/
         body: Stack(
           children : [
-            Padding(padding: EdgeInsets.only(top : 20.0 , right: 10.0),
-              child : InkWell(onTap : ()=>{},
-                child: Text('Skip' , style: TextStyle(fontSize: 16.0 , color: Color.fromARGB(
-                    255, 205, 16, 73)), ),
-              ), ),
+
             _controller.value.isInitialized
                 ? AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
+              aspectRatio: MediaQuery.of(context).size.aspectRatio,
+            // _controller.value.size.aspectRatio,
               child: VideoPlayer(_controller),
 
             )
             : SizedBox.expand(
               child: FittedBox(
-                fit: BoxFit.fitHeight,
+                //fit: BoxFit.cover,
                 child: SizedBox(
-                  width: _controller.value.size?.width ?? 0,
-                  height: _controller.value.size?.height ?? 0,
+                 // width: _controller.value.size?.width ?? 0,
+                 // height: _controller.value.size?.height ?? 20,*/
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
                   child: VideoPlayer(_controller),
                 ),
               ),
             ),
-            Container( margin: EdgeInsets.only(top: 150 , left: 130), child: Image.asset('assets/images/4.png' , scale: 6.0,),),
+            Column(
+              children: [
+                Padding(padding: EdgeInsets.only(top : 25.0 , left: 370.0),
+                  child : InkWell(onTap : ()=>{},
+                    child: Text('Skip' , style: TextStyle(fontSize: 16.0 , color: Color.fromARGB(
+                        255, 205, 16, 73)), ),
+                  ),
+                ),
+                Container( margin: EdgeInsets.only(top: 150 , left: 15), child: Image.asset('assets/images/4.png' , scale: 6.0,),),
+              ],
+            )
           ],
         ),
       ),
