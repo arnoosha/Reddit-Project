@@ -34,7 +34,7 @@ class _NavPageState extends State<NavPage> {
         backgroundColor: Colors.grey[900],
         centerTitle: true,
         title: Image(
-          image: AssetImage('assets/reddit.png'),
+          image: AssetImage('assets/images/reddit.png'),
           width: 45,
           height: 45,
         ),

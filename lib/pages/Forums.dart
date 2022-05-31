@@ -9,9 +9,9 @@ class Forums extends StatefulWidget {
 class _ForumsState extends State<Forums> {
 
   List forums = [
-    Forum(forumName: 'One Piece' , forumPicture: 'assets/One_piece.png'),
-    Forum(forumName: 'Attack On Titan', forumPicture: 'assets/Aot.png'),
-    Forum(forumName: 'Valorant' , forumPicture: 'assets/Valorant.png'),
+    Forum(forumName: 'One Piece' , forumPicture: 'assets/images/One_piece.png'),
+    Forum(forumName: 'Attack On Titan', forumPicture: 'assets/images/Aot.png'),
+    Forum(forumName: 'Valorant' , forumPicture: 'assets/images/Valorant.png'),
   ];
 
   @override
