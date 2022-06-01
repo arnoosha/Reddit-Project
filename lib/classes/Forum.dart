@@ -5,5 +5,5 @@ class Forum {
   String forumName ;
   int forumFollowers = 0 ;
   String forumPicture ;
-  List<Post> posts = [];
+  List<Post> forumPosts = [];
 }
