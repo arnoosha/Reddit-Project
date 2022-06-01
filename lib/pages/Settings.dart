@@ -61,8 +61,8 @@ class _SettingsState extends State<Settings> {
                           onChanged: (bool value) {},
                           openColor: Colors.blueGrey[700],
                           color: Colors.yellow,
-                          openChild: Text("🌘" , style: TextStyle(fontSize: 35),),
-                          closeChild: Text("🌖", style: TextStyle(fontSize: 35)),
+                          openChild: Text("🌘" , style: TextStyle(fontSize: 30),),
+                          closeChild: Text("🌖", style: TextStyle(fontSize: 30)),
                           // sliderChild: Text(
                           //   "🌘",
                           //   style: TextStyle(fontSize: 20),
