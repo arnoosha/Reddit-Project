@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../classes/Post.dart';
+import '../classes/User.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -117,8 +118,22 @@ class _HomeScreenState extends State<HomeScreen> {
                          ),
                          Container(
                            child: IconButton(
-                             onPressed: (){},
-                             icon: Icon(Icons.archive_outlined , size: 30,),
+                             onPressed: (){
+                               setState(() {
+                                 if (postsList[index].isSaved == false) {
+                                   Babak.savedPosts.add(postsList[index]);
+                                   postsList[index].isSaved = true;
+                                 } else {
+                                   for (int i = 0 ; i < Babak.savedPosts.length ; i++){
+                                     if (identical(Babak.savedPosts[i], postsList[index])){
+                                       Babak.savedPosts.removeAt(i);
+                                     }
+                                   }
+                                   postsList[index].isSaved= false;
+                                 }
+                               });
+                             },
+                             icon: Icon(postsList[index].isSaved ? Icons.archive : Icons.archive_outlined , size: 30),
                              color: Colors.grey[800],
                            ),
                          )

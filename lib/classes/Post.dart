@@ -10,6 +10,7 @@ class Post {
   }
   bool isliked = false;
   bool isdisliked = false;
+  bool isSaved = false ;
 }
 
 List<Post> postsList = [

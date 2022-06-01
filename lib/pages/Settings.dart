@@ -1,4 +1,8 @@
+
+
 import 'package:flutter/material.dart';
+
+import 'savedPosts.dart';
 
 class Settings extends StatefulWidget {
 
@@ -16,6 +20,8 @@ class _SettingsState extends State<Settings> {
         itemCount: 1,
         itemBuilder: (context , index) {
           return Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
                 children: [
@@ -29,7 +35,12 @@ class _SettingsState extends State<Settings> {
                   Card(
                     color: Colors.grey[500],
                     child: ListTile(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(
+                              builder: (context) => savedPosts()),
+                        );
+                      },
                       title: Text('Saved'),
                     ),
                   ),
