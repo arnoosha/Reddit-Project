@@ -85,9 +85,9 @@ class _signUpState extends State<signUp> {
               margin: EdgeInsets.only(top: 320 , left: 70),
               child :  DefaultTextStyle(
     style: const TextStyle(
-    fontSize: 30.0,
+    fontSize: 25.0,
     color: Color.fromARGB(255, 121, 37, 37),
-    fontFamily: 'Bobbers',
+    fontFamily: 'RobotoMono',
     ),
     child: AnimatedTextKit(
     animatedTexts: [
