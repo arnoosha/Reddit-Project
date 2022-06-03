@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reddit2/Login.dart';
-import 'package:reddit2/signUp.dart';
+import 'package:reddit2/pages/Login.dart';
+import 'package:reddit2/pages/signUp.dart';
 
 void main() {
   runApp(MaterialApp(home: welcomePage()));
@@ -33,7 +33,7 @@ class welcomePage extends StatelessWidget{
               onPressed: () {
                 Navigator.push(context,
                   MaterialPageRoute(
-                      builder: (context) => SignUp()),
+                      builder: (context) => signUp()),
                 );
               },
               child: Text('Sign Up', style: TextStyle(
@@ -42,11 +42,13 @@ class welcomePage extends StatelessWidget{
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                   side: BorderSide(color: Colors.amber)),
-            ),),
+            ),
+          ),
 
         ],),
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 100,
         title: SizedBox(height: 60, child: Image.asset('assets/images/2.png'),),
