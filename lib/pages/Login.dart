@@ -4,6 +4,8 @@ import 'package:reddit2/pages/signUp.dart';
 import 'package:reddit2/welcomepage.dart';
 import 'package:video_player/video_player.dart';
 
+import 'Nav.dart';
+
 class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
@@ -151,7 +153,7 @@ class _LoginState extends State<Login> {
                     onPressed: (){
                       Navigator.push(context,
                         MaterialPageRoute(
-                            builder: (context) => welcomePage()));
+                            builder: (context) => NavPage()));
 
                     },
                   ),
