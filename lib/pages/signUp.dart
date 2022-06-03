@@ -23,7 +23,7 @@ class _signUpState extends State<signUp> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/videos/5.mp4')
+    _controller = VideoPlayerController.asset('assets/videos/2.mp4')
       ..initialize().then((_) {
         _controller.play();
         _controller.setLooping(true);
