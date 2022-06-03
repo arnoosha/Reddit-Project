@@ -167,7 +167,37 @@ class _signUpState extends State<signUp> {
               ),
             ),
 
-           
+            Container(
+              margin: EdgeInsets.only(top: 600 , left: 100),
+              child: Text('Already a redditor?' , style: TextStyle(color: Color.fromARGB(
+                  255, 239, 217, 2), fontSize: 15.0) ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 585 , left: 205),
+              child : FlatButton(
+                child: Text(
+                    'Login' , style: TextStyle(
+                    color: Color.fromARGB(
+                  255, 239, 217, 2),
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(4.5, 4.5),
+                        blurRadius: 5.0,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                    ],
+
+                    fontSize: 15.0),
+                ),
+                onPressed: () {
+                Navigator.push(context,
+                MaterialPageRoute(
+                builder: (context) => Login()
+                ),
+                );
+                },
+              )
+            ),
           ],
         ),
       ),
