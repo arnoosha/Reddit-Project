@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:reddit2/pages/signUp.dart';
-import 'package:reddit2/welcomepage.dart';
+import 'package:reddit2/pages/googleSU.dart';
+import 'package:reddit2/pages/emailSU.dart';
+import 'package:reddit2/pages/Login.dart';
+import 'package:reddit2/pages/facebookSU.dart';
 import 'package:video_player/video_player.dart';
-
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'Nav.dart';
+import 'package:reddit2/welcomepage.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class signUp extends StatefulWidget {
 
@@ -51,7 +55,47 @@ class _signUpState extends State<signUp> {
                 ),
               ),
             ),
-            Container( margin: EdgeInsets.only(top: 100 , left: 150), child: Image.asset('assets/images/5.png' , scale: 3.0,),),
+            Container(
+              margin: EdgeInsets.only(top: 100 , left: 150), child: Image.asset('assets/images/5.png' , scale: 3.0,),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 350 , top: 50),
+              child : InkWell(onTap : ()=>{
+                Navigator.push(context,
+                  MaterialPageRoute(
+                      builder: (context) => welcomePage()),
+                ),
+              },
+                child: Text('Exit' , style:  TextStyle(fontSize: 20.0 , color: Color.fromARGB(
+                    255, 245, 234, 234),
+                  shadows: <Shadow>[
+                    Shadow(
+                      offset: Offset(2.5, 2.5),
+                      blurRadius: 5.0,
+                      color: Color.fromARGB(255, 239, 235, 235),
+                    ),
+                  ],
+                ),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 320 , left: 70),
+              child : AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  'Welcome to REDDIT :)',
+                  textStyle: const TextStyle(
+                    fontSize: 30.0,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white,
+                  ),
+                  speed: Duration(milliseconds: 200),
+                ),
+              ],
+            ),
+            ),
+            
           ],
         ),
       ),
