@@ -61,6 +61,10 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   fonts:
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster-Regular.ttf
+          weight: 700
     - family: RobotoMono
       fonts:
           - asset: assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf
