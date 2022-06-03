@@ -133,7 +133,41 @@ class _signUpState extends State<signUp> {
                 },
               ),
             ),
-            
+            Container(
+              width: 220.0,
+              height: 40.0,
+              margin: EdgeInsets.only(top: 520 , left: 100),
+              child : SignInButton(
+                Buttons.Facebook,
+                text: "Continue with FaceBook",
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => facebookSU(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Container( //this container should be removed later
+              margin: EdgeInsets.only(top: 580 , left: 260),
+              child : MaterialButton(
+                child: CircleAvatar(
+                   backgroundColor: Color.fromARGB(255, 79, 243, 225),
+                   child: Icon(Icons.arrow_forward_ios,color:Colors.black),
+              ),
+                onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => NavPage()));
+                },
+              ),
+            ),
+
+           
           ],
         ),
       ),
