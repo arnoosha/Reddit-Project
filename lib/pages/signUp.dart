@@ -95,6 +95,44 @@ class _signUpState extends State<signUp> {
               ],
             ),
             ),
+            Container(
+              width: 220.0,
+                height: 40.0,
+                margin: EdgeInsets.only(top: 400 , left: 100),
+                child : SignInButton(
+                  Buttons.Google,
+                  text: "Continue with Google",
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  onPressed: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => googleSU()
+                      ),
+                    );
+                  },
+                ),
+            ),
+            Container(
+              width: 220.0,
+              height: 40.0,
+              margin: EdgeInsets.only(top: 460 , left: 100),
+              child : SignInButton(
+                Buttons.Email,
+                text: "Continue with Email",
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => emailSU()
+                    ),
+                  );
+                },
+              ),
+            ),
             
           ],
         ),
