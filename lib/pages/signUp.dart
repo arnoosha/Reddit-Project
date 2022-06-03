@@ -66,13 +66,15 @@ class _signUpState extends State<signUp> {
                       builder: (context) => welcomePage()),
                 ),
               },
-                child: Text('Exit' , style:  TextStyle(fontSize: 20.0 , color: Color.fromARGB(
-                    255, 245, 234, 234),
+                child: Text('Exit' , style:  TextStyle(fontSize: 20.0 ,
+                  fontStyle: FontStyle.italic,
+                  color: Color.fromARGB(
+                    255, 56, 112, 217),
                   shadows: <Shadow>[
                     Shadow(
                       offset: Offset(2.5, 2.5),
                       blurRadius: 5.0,
-                      color: Color.fromARGB(255, 239, 235, 235),
+                      color: Color.fromARGB(255, 56, 112, 217),
                     ),
                   ],
                 ),
@@ -81,19 +83,18 @@ class _signUpState extends State<signUp> {
             ),
             Container(
               margin: EdgeInsets.only(top: 320 , left: 70),
-              child : AnimatedTextKit(
-              animatedTexts: [
-                TypewriterAnimatedText(
-                  'Welcome to REDDIT :)',
-                  textStyle: const TextStyle(
-                    fontSize: 30.0,
-                    fontStyle: FontStyle.italic,
-                    color: Colors.white,
-                  ),
-                  speed: Duration(milliseconds: 200),
-                ),
-              ],
-            ),
+              child :  DefaultTextStyle(
+    style: const TextStyle(
+    fontSize: 30.0,
+    color: Color.fromARGB(255, 121, 37, 37),
+    fontFamily: 'Bobbers',
+    ),
+    child: AnimatedTextKit(
+    animatedTexts: [
+    TyperAnimatedText('Welcome to REDDIT :)'),
+    ],
+    ),
+    ),
             ),
             Container(
               width: 220.0,
