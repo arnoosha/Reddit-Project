@@ -1,4 +1,4 @@
-import '../classes/Post.dart';
+import 'package:reddit2/classes/Post.dart';
 import 'Forum.dart';
 
 class User {
