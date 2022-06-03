@@ -2,6 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:reddit2/classes/Post.dart';
+import 'package:reddit2/pages/Nav.dart';
+import 'package:reddit2/pages/Notifications.dart';
+import 'package:reddit2/pages/googleSU.dart';
+import 'package:reddit2/pages/postInfo.dart';
 import '../classes/User.dart';
 import 'package:intl/intl.dart';
 
@@ -27,7 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   ListTile(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(
+                              builder: (context) => PostInfo(postsList[index])));
+                    },
                     title: Text(
                       postsList[index].postTitle,
                       style: TextStyle(fontSize: 30 ,
