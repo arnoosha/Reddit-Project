@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fswitch_nullsafety/fswitch_nullsafety.dart';
+
+import 'savedPosts.dart';
 
 class Settings extends StatefulWidget {
 
@@ -16,6 +19,8 @@ class _SettingsState extends State<Settings> {
         itemCount: 1,
         itemBuilder: (context , index) {
           return Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
                 children: [
@@ -29,7 +34,12 @@ class _SettingsState extends State<Settings> {
                   Card(
                     color: Colors.grey[500],
                     child: ListTile(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(
+                              builder: (context) => savedPosts()),
+                        );
+                      },
                       title: Text('Saved'),
                     ),
                   ),
@@ -40,23 +50,44 @@ class _SettingsState extends State<Settings> {
                       title: Text('New Forum'),
                     ),
                   ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(4,5,0,0),
+                        child: FSwitch(
+                          open: true,
+                          width: 400,
+                          height: 45,
+                          onChanged: (bool value) {},
+                          openColor: Colors.blueGrey[700],
+                          color: Colors.yellow,
+                          openChild: Text("🌘" , style: TextStyle(fontSize: 30),),
+                          closeChild: Text("🌖", style: TextStyle(fontSize: 30)),
+                          // sliderChild: Text(
+                          //   "🌘",
+                          //   style: TextStyle(fontSize: 20),
+                          // ),
+                        ),
+                      )
+                    ],
+                  )
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: (){},
-                    iconSize: 30,
-                    icon: Icon(Icons.logout , color: Colors.red,),
-                  ),
-                  IconButton(
-                    onPressed: (){},
-                    iconSize: 30,
-                    icon: Icon(Icons.wb_sunny , color: Colors.yellow,),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     IconButton(
+              //       onPressed: (){},
+              //       iconSize: 30,
+              //       icon: Icon(Icons.logout , color: Colors.red,),
+              //     ),
+              //     IconButton(
+              //       onPressed: (){},
+              //       iconSize: 30,
+              //       icon: Icon(Icons.wb_sunny , color: Colors.yellow,),
+              //     ),
+              //   ],
+              // ),
             ],
           );
         },

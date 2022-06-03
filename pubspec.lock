@@ -100,6 +100,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fswitch_nullsafety:
+    dependency: "direct main"
+    description:
+      name: fswitch_nullsafety
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
   html:
     dependency: transitive
     description:
