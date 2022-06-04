@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:reddit2/pages/signUp.dart';
 import 'package:reddit2/welcomepage.dart';
 import 'package:video_player/video_player.dart';
-
 import 'Nav.dart';
 
 class Login extends StatefulWidget {

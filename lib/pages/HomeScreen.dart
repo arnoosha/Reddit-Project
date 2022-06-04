@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:reddit2/classes/Post.dart';
 import 'package:reddit2/pages/postInfo.dart';

@@ -61,6 +61,10 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   fonts:
+    - family: Eater
+      fonts:
+        - asset: assets/fonts/Eater-Regular.ttf
+          weight: 700
     - family: Lobster
       fonts:
         - asset: assets/fonts/Lobster-Regular.ttf
@@ -89,6 +93,8 @@ flutter:
     - assets/videos/4.mp4
     - assets/videos/5.mp4
     - assets/images/5.png
+    - assets/images/6.png
+    - assets/images/7.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
