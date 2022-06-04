@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:reddit2/pages/signUp.dart';
 import 'package:reddit2/welcomepage.dart';
 import 'package:video_player/video_player.dart';
-
 import 'Nav.dart';
 
 class Login extends StatefulWidget {
@@ -77,7 +76,8 @@ class _LoginState extends State<Login> {
                   ),
                   },
                     child: Text('Exit' , style:  TextStyle(fontSize: 20.0 , color: Color.fromARGB(
-                        255, 255, 255, 255),shadows: <Shadow>[
+                        255, 255, 255, 255),
+                      shadows: <Shadow>[
                     Shadow(
                         offset: Offset(2.5, 2.5),
                         blurRadius: 5.0,
@@ -144,7 +144,6 @@ class _LoginState extends State<Login> {
                 Container(
                   margin: EdgeInsets.fromLTRB( 160,size.height*0.02,0,0),
                   child: MaterialButton(
-
                     child: CircleAvatar(
                       backgroundColor: Color.fromARGB(255, 109, 3, 3),
                       child: Icon(Icons.arrow_forward_ios,color:Colors.white),
@@ -154,7 +153,6 @@ class _LoginState extends State<Login> {
                       Navigator.push(context,
                         MaterialPageRoute(
                             builder: (context) => NavPage()));
-
                     },
                   ),
                 ),
@@ -169,7 +167,8 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       Navigator.push(context,
                         MaterialPageRoute(
-                            builder: (context) => signUp()),
+                            builder: (context) => signUp()
+                        ),
                       );
                     },
                     child: Text("Sign Up",

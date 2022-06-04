@@ -27,6 +27,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.2.1
+  flutter_signin_button: ^2.0.0
+
   flutter:
     sdk: flutter
 
@@ -38,6 +41,7 @@ dependencies:
   video_player: ^2.4.2
   flutter_spinkit: ^5.1.0
   fswitch_nullsafety: ^2.0.2
+  intl: ^0.17.0
   
 
 dev_dependencies:
@@ -56,6 +60,20 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: Eater
+      fonts:
+        - asset: assets/fonts/Eater-Regular.ttf
+          weight: 700
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster-Regular.ttf
+          weight: 700
+    - family: RobotoMono
+      fonts:
+          - asset: assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf
+          - asset: assets/fonts/RobotoMono-VariableFont_wght.ttf
+            weight: 700
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -73,6 +91,10 @@ flutter:
     - assets/videos/2.mp4
     - assets/videos/3.mp4
     - assets/videos/4.mp4
+    - assets/videos/5.mp4
+    - assets/images/5.png
+    - assets/images/6.png
+    - assets/images/7.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

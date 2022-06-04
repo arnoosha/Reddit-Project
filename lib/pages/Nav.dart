@@ -4,6 +4,7 @@ import 'package:reddit2/pages/HomeScreen.dart';
 import 'package:reddit2/pages/New.dart';
 import 'package:reddit2/pages/Notifications.dart';
 import 'package:reddit2/pages/Settings.dart';
+import 'package:reddit2/pages/profile.dart';
 
 class NavPage extends StatefulWidget {
 
@@ -40,7 +41,12 @@ class _NavPageState extends State<NavPage> {
         ),
         actions: [
           IconButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(context,
+                MaterialPageRoute(
+                  builder: (context) => profile(),),
+              );
+            },
             icon: Icon(
               Icons.account_circle,
               size: 40,
@@ -59,8 +65,8 @@ class _NavPageState extends State<NavPage> {
               backgroundColor: Color.fromRGBO(12, 12, 12, 1.0)
           ),
           BottomNavigationBarItem(
-            label: 'Forums',
-            icon: Icon(Icons.forum,),
+              label: 'Forums',
+              icon: Icon(Icons.forum,),
               backgroundColor: Color.fromRGBO(19, 19, 19, 1.0)
           ),
           BottomNavigationBarItem(

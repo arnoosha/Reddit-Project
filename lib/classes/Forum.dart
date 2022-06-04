@@ -9,8 +9,12 @@ class Forum {
 
 }
 
+Forum attackOnTitan = Forum(forumName: 'Attack On Titan', forumPicture: 'assets/images/Aot.png');
+Forum onePiece = Forum(forumName: 'One Piece', forumPicture: 'assets/images/One_piece.png');
+Forum valorant = Forum(forumName: 'Valorant' , forumPicture: 'assets/images/Valorant.png');
+
 List allForumsList = [
-  Forum(forumName: 'One Piece' , forumPicture: 'assets/images/One_piece.png'),
-  Forum(forumName: 'Attack On Titan', forumPicture: 'assets/images/Aot.png'),
-  Forum(forumName: 'Valorant' , forumPicture: 'assets/images/Valorant.png'),
+  attackOnTitan,
+  onePiece,
+  valorant,
 ];
