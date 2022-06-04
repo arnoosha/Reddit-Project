@@ -1,4 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:reddit2/classes/Forum.dart';
+import 'package:reddit2/classes/Post.dart';
+import 'package:reddit2/pages/HomeScreen.dart';
 
 class New extends StatefulWidget {
 
@@ -7,25 +12,89 @@ class New extends StatefulWidget {
 }
 
 class _NewState extends State<New> {
+  String postTitle;
+  String postDesc;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.grey[900],
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.add,
+                color: Color.fromRGBO(239, 233, 233, 1.0),
+              ),
+              onPressed: (){
+                if (postTitle != null && postDesc != null){
+                  postsList.add(Post(postTitle: postTitle, postDescription: postDesc , postForum: valorant , creationDate: DateTime.now()));
+                  Navigator.pushReplacement(context , MaterialPageRoute(builder: (context) => HomeScreen()));
+                }
+              },
+            )
+          ],
+        ),
         backgroundColor: Colors.grey[900],
         body: Stack(
           children: [
             SafeArea(
               child: Column(
                 children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 480, 10, 0),
-                    alignment: Alignment.bottomRight,
-                    child: FloatingActionButton(
-                      backgroundColor: Colors.grey[700],
-                      onPressed: (
-                          ){},
-                      child: Icon(Icons.add, color: Colors.grey[400],size: 35),
-                    ),
-                  )
+                  Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          'Post Title',
+                          style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 1.0),
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      Container (
+                        margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 0),
+                        width: MediaQuery.of(context).size.width,
+                        child: TextField(
+                          textAlign: TextAlign.left,
+                          textAlignVertical: TextAlignVertical.top,
+                          style: TextStyle(
+                            color: Color.fromRGBO(226, 217, 217, 1.0),
+                            fontSize: 22,
+                          ),
+                          onChanged: (String inputTitle){
+                            postTitle = inputTitle;
+                          },
+                        ),
+                      ),
+                      ListTile(
+                        title: Text(
+                          'Post Description',
+                          style: TextStyle(
+                              color: Color.fromRGBO(236, 222, 222, 1.0),
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                      Container (
+                        margin: EdgeInsets.symmetric(vertical: 10 , horizontal: 0),
+                        width: MediaQuery.of(context).size.width,
+                        child: TextField(
+                          textAlign: TextAlign.left,
+                          textAlignVertical: TextAlignVertical.top,
+                          style: TextStyle(
+                            color: Color.fromRGBO(226, 217, 217, 1.0),
+                            fontSize: 22,
+                          ),
+                          onChanged: (String inputDescription){
+                            postDesc = inputDescription;
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

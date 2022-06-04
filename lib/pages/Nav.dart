@@ -32,6 +32,7 @@ class _NavPageState extends State<NavPage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(250, 7, 7, 7),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.grey[900],
         centerTitle: true,
         title: Image(

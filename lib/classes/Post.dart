@@ -7,7 +7,7 @@ class Post {
   String postTitle ;
   String postDescription ;
   int postLikes = 0 ;
-  Post({this.postTitle, this.postDescription , this.postLikes , this.creationDate , this.postForum});
+  Post({this.postTitle, this.postDescription, this.creationDate , this.postForum});
   bool isPositiveDetect(){
     if (postLikes < 0) {return true;}
     else {return  false;}
@@ -23,11 +23,11 @@ class Post {
 
 List<Post> postsList = [
   Post(postTitle: "My Last Valorant Match" , postDescription: "pashmam" ,
-      postLikes: 0, creationDate: DateTime(2022, 5 , 20) , postForum: valorant),
+      creationDate: DateTime(2022, 5 , 20) , postForum: valorant),
   Post(postTitle: "My 2 last Valorant Match" , postDescription: "I won 13-4" ,
-      postLikes: 0 ,creationDate: DateTime(2022, 5 , 28) , postForum: valorant),
+      creationDate: DateTime(2022, 5 , 28) , postForum: valorant),
   Post(postTitle: "My 3 last Valorant Match" , postDescription: "I won 13-0" ,
-      postLikes: 0 , creationDate: DateTime(2022, 5 , 26) , postForum: valorant),
+      creationDate: DateTime(2022, 5 , 26) , postForum: valorant),
 ];
 List<Post> bubbleSort(List<Post> postsList) {
   List<Post> result = postsList;
