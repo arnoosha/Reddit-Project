@@ -29,23 +29,8 @@ class _LoginState extends State<Login> {
     var size = MediaQuery.of(context).size;
     return MaterialApp(
       home: Scaffold(
-        /*appBar: AppBar(
-            actions: [
-              Padding(
-                padding: EdgeInsets.only(top : 20.0 , right: 10.0),
-                child : InkWell(onTap : ()=>{},
-                  child: Text('Skip' , style: TextStyle(fontSize: 16.0 , color: Color.fromARGB(
-                      255, 205, 16, 73)), ),
-                ),
-              )
-            ],
-          backgroundColor: Color.fromARGB(0, 255, 255, 255),
-          elevation: 0,
-          shadowColor: Color.fromARGB(0, 255, 255, 255),
-        ),*/
         body: Stack(
           children : [
-
             _controller.value.isInitialized
                 ? AspectRatio(
               aspectRatio: MediaQuery.of(context).size.aspectRatio,
