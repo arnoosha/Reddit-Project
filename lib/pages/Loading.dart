@@ -22,7 +22,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Image.asset(
-              'assets/reddit.png',
+              'assets/images/reddit.png',
             width: 150,
             height: 150,
           ),
