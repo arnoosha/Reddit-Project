@@ -90,7 +90,6 @@ class _signUpState extends State<signUp> {
     fontFamily: 'RobotoMono',
     ),
     child: AnimatedTextKit(
-      totalRepeatCount: 200,
     animatedTexts: [
     TyperAnimatedText('Welcome to REDDIT :)'),
     ],
