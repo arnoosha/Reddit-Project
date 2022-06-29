@@ -3,7 +3,7 @@ import 'package:reddit2/classes/Post.dart';
 import 'Forum.dart';
 
 class User {
-
+  List<Post> shownPosts = [];
   List<Post> savedPosts = [];
   List<Forum> followedForums = [];
   String username ;
@@ -18,3 +18,4 @@ class User {
 
 User Babak = User("Babak", "2663" ,"assets/images/6.png");
 User Ari = User("Arnoosha", "123456" , "assets/images/5.png");
+User mainUser = Babak ;
