@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'Nav.dart';
+import 'package:flutter/cupertino.dart';
 
 class emailSU extends StatefulWidget {
 
@@ -23,6 +25,7 @@ class _emailSUState extends State<emailSU> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return MaterialApp(
       home: Scaffold(
         body: Stack(
@@ -47,12 +50,14 @@ class _emailSUState extends State<emailSU> {
               ),
             ),
 
+            Container( margin: EdgeInsets.only(top: 190 , left: 145 ), child: Image.asset('assets/images/8.png' , scale: 4.0,),),
+
             Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Color.fromARGB(255, 166, 177, 41)),
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              margin: EdgeInsets.only(top : 300.0 , left: 110.0),
+              margin: EdgeInsets.only(top : 310.0 , left: 110.0),
               width: 200.0,
               height: 40.0,
               child: TextField(
@@ -72,7 +77,7 @@ class _emailSUState extends State<emailSU> {
                 border: Border.all(color: Color.fromARGB(255, 166, 177, 41)),
                 borderRadius: BorderRadius.circular(15.0),
               ),
-              margin: EdgeInsets.only(top : 350.0 , left: 110.0),
+              margin: EdgeInsets.only(top : 370.0 , left: 110.0),
               width: 200.0,
               height: 40.0,
               child: TextField(
@@ -87,6 +92,23 @@ class _emailSUState extends State<emailSU> {
                 ),
               ),
             ),
+
+            Container(
+              margin: EdgeInsets.only(top: 430 , left: 240),
+              child: MaterialButton(
+                child: CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 194, 9, 68),
+                  child: Icon(Icons.check ,color:Colors.white),
+
+                ),
+                onPressed: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => NavPage()));
+                },
+              ),
+            ),
+
           ],
         ),
       ),
