@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:reddit2/classes/User.dart';
@@ -27,10 +26,10 @@ class _profileState extends State<profile> {
                   ),
                 ),
                 ),
-                Image(image: AssetImage('${Ari.userPicture}'),height: 340.0,),
+                Image(image: AssetImage('${mainUser.userPicture}'),height: 340.0,),
                 Container(
                   margin: EdgeInsets.only(top: 250.0 , left: 30.0),
-                    child : Text('u/${Ari.username}' , style: TextStyle(
+                    child : Text('u/${mainUser.username}' , style: TextStyle(
                   fontFamily: 'Eater',
                       color: Color.fromARGB(255, 159, 231, 163),
                   fontSize: 30.0,
@@ -57,7 +56,7 @@ class _profileState extends State<profile> {
                 Container(
                   margin: EdgeInsets.only(top: 300.0 , left: 30.0),
                   child: Text(
-                    '${Ari.followers} followers',
+                    '${mainUser.followers} followers',
                     style: TextStyle(
                       color: Color.fromARGB(255, 159, 231, 163),
                       fontFamily: 'Lobster',

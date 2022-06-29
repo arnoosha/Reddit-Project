@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../classes/Post.dart';
 import '../classes/User.dart';
 
 class savedPosts extends StatefulWidget {
@@ -18,7 +16,7 @@ class _savedPostsState extends State<savedPosts> {
       ),
       backgroundColor: Colors.grey[900],
       body: ListView.builder(
-          itemCount: Babak.savedPosts.length,
+          itemCount: mainUser.savedPosts.length,
           itemBuilder: (context , index){
             return Card(
               color: Colors.grey[500],
@@ -27,14 +25,14 @@ class _savedPostsState extends State<savedPosts> {
                   ListTile(
                     onTap: (){},
                     title: Text(
-                      Babak.savedPosts[index].postTitle,
+                      mainUser.savedPosts[index].postTitle,
                       style: TextStyle(fontSize: 30 ,
                           fontWeight: FontWeight.bold,
                           color: Colors.grey[900]
                       ),
                     ),
                     subtitle: Text(
-                      Babak.savedPosts[index].postDescription,
+                      mainUser.savedPosts[index].postDescription,
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -49,16 +47,16 @@ class _savedPostsState extends State<savedPosts> {
                             child: IconButton(
                                 onPressed: (){
                                   setState(() {
-                                    if(Babak.savedPosts[index].isliked == false && Babak.savedPosts[index].isdisliked == false){
-                                      Babak.savedPosts[index].postLikes++;
-                                      Babak.savedPosts[index].isliked = true;
-                                    }else if(Babak.savedPosts[index].isliked == false && Babak.savedPosts[index].isdisliked == true){
-                                      Babak.savedPosts[index].postLikes += 2;
-                                      Babak.savedPosts[index].isdisliked = false;
-                                      Babak.savedPosts[index].isliked = true;
-                                    }else if(Babak.savedPosts[index].isliked == true && Babak.savedPosts[index].isdisliked == false){
-                                      Babak.savedPosts[index].postLikes--;
-                                      Babak.savedPosts[index].isliked = false;
+                                    if(mainUser.savedPosts[index].isLiked == false && mainUser.savedPosts[index].isDisliked == false){
+                                      mainUser.savedPosts[index].postLikes++;
+                                      mainUser.savedPosts[index].isLiked = true;
+                                    }else if(mainUser.savedPosts[index].isLiked == false && mainUser.savedPosts[index].isDisliked == true){
+                                      mainUser.savedPosts[index].postLikes += 2;
+                                      mainUser.savedPosts[index].isDisliked = false;
+                                      mainUser.savedPosts[index].isLiked = true;
+                                    }else if(mainUser.savedPosts[index].isLiked == true && mainUser.savedPosts[index].isDisliked == false){
+                                      mainUser.savedPosts[index].postLikes--;
+                                      mainUser.savedPosts[index].isLiked = false;
                                     }
                                   });
                                 },
@@ -74,16 +72,16 @@ class _savedPostsState extends State<savedPosts> {
                             child: IconButton(
                                 onPressed: (){
                                   setState(() {
-                                    if(Babak.savedPosts[index].isliked == false && Babak.savedPosts[index].isdisliked == false){
-                                      Babak.savedPosts[index].postLikes--;
-                                      Babak.savedPosts[index].isdisliked = true;
-                                    }else if(Babak.savedPosts[index].isliked == false && Babak.savedPosts[index].isdisliked == true){
-                                      Babak.savedPosts[index].postLikes++;
-                                      Babak.savedPosts[index].isdisliked = false;
-                                    }else if(Babak.savedPosts[index].isliked == true && Babak.savedPosts[index].isdisliked == false){
-                                      Babak.savedPosts[index].postLikes -= 2;
-                                      Babak.savedPosts[index].isdisliked = true;
-                                      Babak.savedPosts[index].isliked = false;
+                                    if(mainUser.savedPosts[index].isLiked == false && mainUser.savedPosts[index].isDisliked == false){
+                                      mainUser.savedPosts[index].postLikes--;
+                                      mainUser.savedPosts[index].isDisliked = true;
+                                    }else if(mainUser.savedPosts[index].isLiked == false && mainUser.savedPosts[index].isDisliked == true){
+                                      mainUser.savedPosts[index].postLikes++;
+                                      mainUser.savedPosts[index].isDisliked = false;
+                                    }else if(mainUser.savedPosts[index].isLiked == true && mainUser.savedPosts[index].isDisliked == false){
+                                      mainUser.savedPosts[index].postLikes -= 2;
+                                      mainUser.savedPosts[index].isDisliked = true;
+                                      mainUser.savedPosts[index].isLiked = false;
                                     }
                                   });
                                 },
@@ -96,11 +94,11 @@ class _savedPostsState extends State<savedPosts> {
                           ),
                           Container(
                             child: Text(
-                              Babak.savedPosts[index].postLikes.toString(),
+                              mainUser.savedPosts[index].postLikes.toString(),
                               style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
-                                color: Babak.savedPosts[index].isPositiveDetect() ? Colors.red : Colors.green[800],
+                                color: mainUser.savedPosts[index].isPositiveDetect() ? Colors.red : Colors.green[800],
                               ),
                             ),
                           ),
@@ -122,15 +120,15 @@ class _savedPostsState extends State<savedPosts> {
                             child: IconButton(
                               onPressed: (){
                                 setState(() {
-                                  for (int i = 0 ; i < postsList.length ; i++){
-                                    if (identical(Babak.savedPosts[index], postsList[i])){
-                                      postsList[i].isSaved = false;
+                                  for (int i = 0 ; i < mainUser.shownPosts.length ; i++){
+                                    if (identical(mainUser.savedPosts[index], mainUser.shownPosts[i])){
+                                      mainUser.shownPosts[i].isSaved = false;
                                     }
                                   }
-                                  Babak.savedPosts.removeAt(index);
+                                  mainUser.savedPosts.removeAt(index);
                                 });
                               },
-                              icon: Icon(Babak.savedPosts[index].isSaved ? Icons.archive : Icons.archive_outlined , size: 30),
+                              icon: Icon(mainUser.savedPosts[index].isSaved ? Icons.archive : Icons.archive_outlined , size: 30),
                               color: Colors.grey[800],
                             ),
                           )

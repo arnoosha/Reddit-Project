@@ -5,6 +5,8 @@ import 'package:reddit2/classes/Forum.dart';
 import 'package:reddit2/classes/Post.dart';
 import 'package:reddit2/pages/HomeScreen.dart';
 
+import '../classes/User.dart';
+
 class New extends StatefulWidget {
 
   @override
@@ -28,7 +30,8 @@ class _NewState extends State<New> {
               ),
               onPressed: (){
                 if (postTitle != null && postDesc != null){
-                  postsList.add(Post(postTitle: postTitle, postDescription: postDesc , postForum: valorant , creationDate: DateTime.now()));
+                  postsList.add(Post(postTitle , postDesc , DateTime.now() , valorant));
+                  mainUser.shownPosts.add(Post(postTitle , postDesc , DateTime.now() , valorant));
                   Navigator.pushReplacement(context , MaterialPageRoute(builder: (context) => HomeScreen()));
                 }
               },

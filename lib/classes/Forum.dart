@@ -6,7 +6,6 @@ class Forum {
   int forumFollowers = 0 ;
   String forumPicture ;
   List<Post> forumPosts = [];
-
 }
 
 Forum attackOnTitan = Forum(forumName: 'Attack On Titan', forumPicture: 'assets/images/Aot.png');

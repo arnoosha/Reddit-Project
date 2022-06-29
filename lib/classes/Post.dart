@@ -1,19 +1,21 @@
+import 'package:reddit2/classes/Forum.dart';
 import 'package:reddit2/classes/User.dart';
-
-import 'Forum.dart';
 
 class Post {
 
   String postTitle ;
   String postDescription ;
   int postLikes = 0 ;
-  Post({this.postTitle, this.postDescription, this.creationDate , this.postForum});
+  Post(this.postTitle, this.postDescription, this.creationDate , postForum){
+    postForum.forumPosts.add(this);
+  }
+  
   bool isPositiveDetect(){
     if (postLikes < 0) {return true;}
     else {return  false;}
   }
-  bool isliked = false;
-  bool isdisliked = false;
+  bool isLiked = false;
+  bool isDisliked = false;
   bool isSaved = false ;
   DateTime creationDate ;
   Forum postForum;
@@ -22,13 +24,11 @@ class Post {
 }
 
 List<Post> postsList = [
-  Post(postTitle: "My Last Valorant Match" , postDescription: "pashmam" ,
-      creationDate: DateTime(2022, 5 , 20) , postForum: valorant),
-  Post(postTitle: "My 2 last Valorant Match" , postDescription: "I won 13-4" ,
-      creationDate: DateTime(2022, 5 , 28) , postForum: valorant),
-  Post(postTitle: "My 3 last Valorant Match" , postDescription: "I won 13-0" ,
-      creationDate: DateTime(2022, 5 , 26) , postForum: valorant),
+  Post("Valorant", "This is a valorant post", DateTime(2022,1,5), valorant),
+  Post("One Piece", "This is a One Piece post", DateTime(2022,5,20), onePiece),
+  Post("Attack On Titan", "This is an AOT post", DateTime(2022,6,24), attackOnTitan)
 ];
+
 List<Post> bubbleSort(List<Post> postsList) {
   List<Post> result = postsList;
   for (int i = 0; i < result.length; i++) {
