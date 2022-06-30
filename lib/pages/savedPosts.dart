@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reddit2/classes/Post.dart';
 import '../classes/User.dart';
 
 class savedPosts extends StatefulWidget {
@@ -120,9 +121,9 @@ class _savedPostsState extends State<savedPosts> {
                             child: IconButton(
                               onPressed: (){
                                 setState(() {
-                                  for (int i = 0 ; i < mainUser.shownPosts.length ; i++){
-                                    if (identical(mainUser.savedPosts[index], mainUser.shownPosts[i])){
-                                      mainUser.shownPosts[i].isSaved = false;
+                                  for (int i = 0 ; i < postsList.length ; i++){
+                                    if (identical(mainUser.savedPosts[index], postsList[i])){
+                                      postsList[i].isSaved = false;
                                     }
                                   }
                                   mainUser.savedPosts.removeAt(index);

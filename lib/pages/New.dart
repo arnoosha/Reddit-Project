@@ -31,7 +31,6 @@ class _NewState extends State<New> {
               onPressed: (){
                 if (postTitle != null && postDesc != null){
                   postsList.add(Post(postTitle , postDesc , DateTime.now() , valorant));
-                  mainUser.shownPosts.add(Post(postTitle , postDesc , DateTime.now() , valorant));
                   Navigator.pushReplacement(context , MaterialPageRoute(builder: (context) => HomeScreen()));
                 }
               },

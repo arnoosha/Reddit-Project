@@ -13,15 +13,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-
   @override
   Widget build(BuildContext context) {
 
-    mainUser.shownPosts = bubbleSort(mainUser.shownPosts);
+    postsList = bubbleSort(postsList);
     return Scaffold(
       backgroundColor: Colors.grey[900],
       body: ListView.builder(
-          itemCount: mainUser.shownPosts.length,
+          itemCount: postsList.length,
           itemBuilder: (context , index){
             return Card(
               color: Colors.grey[500],
@@ -31,17 +30,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: (){
                       Navigator.push(context,
                           MaterialPageRoute(
-                              builder: (context) => PostInfo(mainUser.shownPosts[index])));
+                              builder: (context) => PostInfo(postsList[index])));
                     },
                     title: Text(
-                      mainUser.shownPosts[index].postTitle,
+                      postsList[index].postTitle,
                       style: TextStyle(fontSize: 30 ,
                           fontWeight: FontWeight.bold,
                           color: Colors.grey[900]
                       ),
                     ),
                     subtitle: Text(
-                      mainUser.shownPosts[index].postDescription,
+                      postsList[index].postDescription,
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -58,16 +57,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                child: IconButton(
                                    onPressed: (){
                                      setState(() {
-                                       if(mainUser.shownPosts[index].isLiked == false && mainUser.shownPosts[index].isDisliked == false){
-                                         mainUser.shownPosts[index].postLikes++;
-                                         mainUser.shownPosts[index].isLiked = true;
-                                       }else if(mainUser.shownPosts[index].isLiked == false && mainUser.shownPosts[index].isDisliked == true){
-                                         mainUser.shownPosts[index].postLikes += 2;
-                                         mainUser.shownPosts[index].isDisliked = false;
-                                         mainUser.shownPosts[index].isLiked = true;
-                                       }else if(mainUser.shownPosts[index].isLiked == true && mainUser.shownPosts[index].isDisliked == false){
-                                         mainUser.shownPosts[index].postLikes--;
-                                         mainUser.shownPosts[index].isLiked = false;
+                                       if(postsList[index].isLiked == false && postsList[index].isDisliked == false){
+                                         postsList[index].postLikes++;
+                                         postsList[index].isLiked = true;
+                                       }else if(postsList[index].isLiked == false && postsList[index].isDisliked == true){
+                                         postsList[index].postLikes += 2;
+                                         postsList[index].isDisliked = false;
+                                         postsList[index].isLiked = true;
+                                       }else if(postsList[index].isLiked == true && postsList[index].isDisliked == false){
+                                         postsList[index].postLikes--;
+                                         postsList[index].isLiked = false;
                                        }
                                      });
                                    },
@@ -83,16 +82,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                child: IconButton(
                                    onPressed: (){
                                      setState(() {
-                                       if(mainUser.shownPosts[index].isLiked == false && mainUser.shownPosts[index].isDisliked == false){
-                                         mainUser.shownPosts[index].postLikes--;
-                                         mainUser.shownPosts[index].isDisliked = true;
-                                       }else if(mainUser.shownPosts[index].isLiked == false && mainUser.shownPosts[index].isDisliked == true){
-                                         mainUser.shownPosts[index].postLikes++;
-                                         mainUser.shownPosts[index].isDisliked = false;
-                                       }else if(mainUser.shownPosts[index].isLiked == true && mainUser.shownPosts[index].isDisliked == false){
-                                         mainUser.shownPosts[index].postLikes -= 2;
-                                         mainUser.shownPosts[index].isDisliked = true;
-                                         mainUser.shownPosts[index].isLiked = false;
+                                       if(postsList[index].isLiked == false && postsList[index].isDisliked == false){
+                                         postsList[index].postLikes--;
+                                         postsList[index].isDisliked = true;
+                                       }else if(postsList[index].isLiked == false && postsList[index].isDisliked == true){
+                                         postsList[index].postLikes++;
+                                         postsList[index].isDisliked = false;
+                                       }else if(postsList[index].isLiked == true && postsList[index].isDisliked == false){
+                                         postsList[index].postLikes -= 2;
+                                         postsList[index].isDisliked = true;
+                                         postsList[index].isLiked = false;
                                        }
                                      });
                                    },
@@ -105,11 +104,11 @@ class _HomeScreenState extends State<HomeScreen> {
                              ),
                              Container(
                                child: Text(
-                                 mainUser.shownPosts[index].postLikes.toString(),
+                                 postsList[index].postLikes.toString(),
                                  style: TextStyle(
                                    fontSize: 22,
                                    fontWeight: FontWeight.bold,
-                                   color: mainUser.shownPosts[index].isPositiveDetect() ? Colors.red : Colors.green[800],
+                                   color: postsList[index].isPositiveDetect() ? Colors.red : Colors.green[800],
                                  ),
                                ),
                              ),
@@ -131,20 +130,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                child: IconButton(
                                  onPressed: (){
                                    setState(() {
-                                     if (mainUser.shownPosts[index].isSaved == false) {
-                                       Babak.savedPosts.add(mainUser.shownPosts[index]);
-                                       mainUser.shownPosts[index].isSaved = true;
+                                     if (postsList[index].isSaved == false) {
+                                       Babak.savedPosts.add(postsList[index]);
+                                       postsList[index].isSaved = true;
                                      } else {
                                        for (int i = 0 ; i < Babak.savedPosts.length ; i++){
-                                         if (identical(Babak.savedPosts[i], mainUser.shownPosts[index])){
+                                         if (identical(Babak.savedPosts[i], postsList[index])){
                                            Babak.savedPosts.removeAt(i);
                                          }
                                        }
-                                       mainUser.shownPosts[index].isSaved= false;
+                                       postsList[index].isSaved= false;
                                      }
                                    });
                                  },
-                                 icon: Icon(mainUser.shownPosts[index].isSaved ? Icons.archive : Icons.archive_outlined , size: 30),
+                                 icon: Icon(postsList[index].isSaved ? Icons.archive : Icons.archive_outlined , size: 30),
                                  color: Colors.grey[800],
                                ),
                              )
@@ -157,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Container(
                             padding: EdgeInsets.symmetric(vertical: 7 , horizontal: 13),
                             child: Text(
-                                DateFormat('MMMMd').format(mainUser.shownPosts[index].creationDate),
+                                DateFormat('MMMMd').format(postsList[index].creationDate),
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.grey[900]

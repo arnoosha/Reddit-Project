@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fswitch_nullsafety/fswitch_nullsafety.dart';
-
 import 'savedPosts.dart';
 
 class Settings extends StatefulWidget {
@@ -58,7 +57,8 @@ class _SettingsState extends State<Settings> {
                           open: true,
                           width: 400,
                           height: 45,
-                          onChanged: (bool value) {},
+                          onChanged: (bool value) {
+                          },
                           openColor: Colors.blueGrey[700],
                           color: Colors.yellow,
                           openChild: Text("🌘" , style: TextStyle(fontSize: 30),),
