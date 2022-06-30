@@ -92,9 +92,9 @@ class _PostInfoState extends State<PostInfo> {
                           height: 60,
                           width: 30,
                           child: Icon(
-                                Icons.arrow_upward,
-                                color: Colors.green[800],
-                                size: 34,
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 32,
                               )
                         ),
                         Container(
@@ -106,14 +106,6 @@ class _PostInfoState extends State<PostInfo> {
                               fontWeight: FontWeight.bold,
                               color: widget.pagePost.isPositiveDetect() ? Colors.red : Colors.green[800],
                             ),
-                          ),
-                        ),
-                        Container(
-                          height: 50,
-                          child: Icon(
-                                Icons.arrow_downward,
-                                color: Color.fromRGBO(233, 75, 60, 1.0),
-                                size: 34,
                           ),
                         ),
                       ],

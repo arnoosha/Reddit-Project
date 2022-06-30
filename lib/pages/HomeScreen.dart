@@ -1,9 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:reddit2/classes/Post.dart';
 import 'package:reddit2/pages/postInfo.dart';
+import '../classes/Post.dart';
 import '../classes/User.dart';
 import 'package:intl/intl.dart';
+import 'CommentsPage.dart';
 
 class HomeScreen extends StatefulWidget {
 
@@ -118,7 +119,11 @@ class _HomeScreenState extends State<HomeScreen> {
                            children: [
                              Container(
                                child: IconButton(
-                                 onPressed: (){},
+                                 onPressed: () {
+                                   Navigator.push(context,
+                                     MaterialPageRoute(
+                                         builder: (context) => CommentsPage(postsList[index])));
+                                 },
                                  icon: Icon(
                                    Icons.mode_comment_outlined,
                                    size: 30,
